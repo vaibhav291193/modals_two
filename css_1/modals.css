@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.ds-container {
+  width: 98%;
+  margin: 0 auto;
+  border: 0px solid #ccc;
+  padding: 3% 1%;
+}
+.example-container {
+  width: 450px;
+  margin: 0 auto;
+  border: 0px solid red;
+  padding: 10px;
+}
+@media only screen and (max-width: 40em) {
+  .example-container {
+    width: 270px;
+  }
+}
+h1{
+    font-family: Roboto;
+    font-size: 24px;
+}
+
+
+/* 
+Do not delete the following comment. It is essential for tracking purposes.
+#Merc2021DoNotDelete 
+*/
+
+.screen-reader{
+  visibility: hidden; 
+  width: 1px; 
+  height: 1px;
+}
+.hidden {
+  display: none;
+}
+
+[role="alertdialog"],
+[role="dialog"] {
+  box-sizing: border-box;
+  /* padding: 0px 0px 36px 36px; */
+  background-color: #fff;
+  /* min-height: 70vh; */
+  max-height: 70vh;
+}
+
+@media screen and (min-width: 640px) {
+  [role="alertdialog"],
+  [role="dialog"] {
+
+    position: absolute;
+    left: 50vw;
+    top: 50vh;
+    
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    filter: blur(0);
+    -webkit-filter: blur(0);
+
+    min-height: auto;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  [role="alertdialog"],
+  [role="dialog"] {
+    min-width: 100vw;
+    max-width: 100vw;
+
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+
+    padding: 0px 0px 12px 12px;
+  }
+}
+
+
+.modal-header{
+  position:fixed;
+  top:0px;
+  right:0px;
+  left:40px;  
+  background:#fff;
+  z-index:1000;
+
+  padding: 40px 54px 24px 0;
+}
+.large{
+  width: 80%;  /* == breakpoint - left+right margin */
+  max-width: 768px;
+}
+.medium{
+  width: 80%;  /* == breakpoint - left+right margin */
+  max-width: 568px;
+}
+.small{
+  width: 80%;  /* == breakpoint - left+right margin */
+  max-width: 368px;
+}
+
+.dialog_label {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+  color: #111111;
+  text-align: left;
+}
+
+.dialog_form {
+  margin: 96px 0 0 0;
+  max-height: calc(70vh - 96px) !important;
+  /* min-height: calc(70vh - 95px) !important; */
+  overflow-y: auto;
+}
+@media screen and (max-width: 640px) {
+  .modal-header{
+    left:16px;  
+    padding: 16px 54px 24px 0;
+  }
+
+  .dialog_form{
+    margin: 67px 0 0 0;
+    max-height: calc(100vh - 67px) !important;
+    /* min-height: calc(100vh - 67px) !important; */
+    padding: 4px 4px 12px 4px;
+  }
+}
+
+/* Scroll */
+.dialog_form::-webkit-scrollbar {
+	 width: 14px;
+}
+@media screen and (max-width: 640px) {
+  .dialog_form::-webkit-scrollbar {
+	  width: 12px;
+  }
+}
+.dialog_form {
+	 --scrollbarBG: #fff;
+	 --thumbBG: #888;
+	 scrollbar-width: thin;
+	 scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+.dialog_form::-webkit-scrollbar-track {
+	 background: var(--scrollbarBG);
+	 margin-top: 0px;
+   margin-bottom: 40px;
+}
+.dialog_form::-webkit-scrollbar-thumb {
+	 background-color: #888;
+	 border: 4px solid #fff;
+	 border-radius: 100px;
+}
+/* End Scroll */
+
+.dialog_form p + p {
+  margin-top: 24px;
+}
+
+
+.dialog_form .label_text {
+  box-sizing: border-box;
+  padding-right: 0.5em;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  width: 30%;
+  text-align: right;
+}
+
+.dialog_form .label_info {
+  box-sizing: border-box;
+  padding-right: 0.5em;
+  font-size: 12px;
+  width: 30%;
+  text-align: right;
+  display: inline-block;
+}
+
+.dialog_form_item {
+  opacity: 1;  
+  /* padding: 4px 36px 0px 4px; */
+  padding: 0px 40px 0px 40px;
+}
+
+.dialog_form_item p{
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+
+.dialog_form_actions {
+  margin-top: 24px;
+  text-align: left;
+
+  /* margin-bottom: 4px; */
+  /* padding: 0px 4px 36px 4px; */
+  padding: 0px 0px 40px 40px;
+}
+
+/* native <dialog> element uses the ::backdrop pseudo-element */
+
+/* dialog::backdrop, */
+.dialog-backdrop {
+  display: none;
+  position: fixed;
+  overflow-y: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@media screen and (min-width: 640px) {
+  .dialog-backdrop {
+    background: rgba(17, 17, 17, 0.75);
+  }
+}
+@media screen and (max-width: 640px) {
+  .small,
+  .medium,
+  .large{
+    width: inherit;
+    max-width: inherit;
+  }
+  
+  .dialog-backdrop {
+    background: rgba(255, 255, 255, 1);
+  }
+}
+
+.dialog-backdrop.active {
+  display: block;
+}
+
+.no-scroll {
+  overflow-y: auto !important;
+}
+
+/* this is added to the body when a dialog is open */
+.has-dialog {
+  overflow: hidden;
+}
+
+/* styling for alert-dialog example */
+.notes {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  min-width: 400px;
+  max-width: 100%;
+  width: 33%;
+}
+
+.toast {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  transform: translateY(-150%);
+  transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toast.active {
+  transform: translateY(0);
+}
+
+
+
+
+
+
+
+/* Buttons */
+button,
+.button {
+  font-family: Roboto !important;
+  min-width: 84px;
+  max-height: 44px;
+  line-height: 24px;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: 0.4px;
+  text-align: center;
+  width: auto;
+  border-radius: 2px;
+  border: 0px !important;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 20px !important;
+  cursor: pointer;
+}
+
+button:only-of-type,
+.button:only-of-type,
+button:last-child,
+.button:last-child {
+  margin-bottom: 0px;
+}
+
+button + button,
+.button + .button {
+  margin-left: 12px;
+}
+button[aria-disabled="true"],
+a[aria-disabled="true"] {
+  pointer-events: none;
+}
+
+
+/* Primary Button */
+.primary-button {
+  color: #ffffff;
+  background-color: #0467c6;
+}
+.primary-button:hover {
+  background-color: #004990;
+}
+
+.primary-button:focus {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #0467c6;
+  background-color: #004990; 
+  outline: none;  
+}
+
+.primary-button.by-keyboard:focus {
+  box-shadow: 0 0 0 0px #fff, 0 0 0 0px #0467c6 !important;
+}
+
+.primary-button.disabled,
+.primary-button:disabled {
+  color: #666666;
+  background-color: #f0f0f0;
+}
+
+/* Secondary Button */
+.secondary-button {
+  background-color: #ffffff;
+  color: #0467c6;
+  box-shadow: inset 0 0 0 1px #0467c6;
+  border: none !important;
+}
+.secondary-button:hover {
+  color: #004990;
+  box-shadow: inset 0 0 0 2px #004990;
+  border: none;
+}
+.secondary-button:focus {
+  color: #004990;
+  box-shadow: inset 0 0 0 2px #004990, 0 0 0 2px #fff, 0 0 0 4px #0467c6; 
+  outline: none;
+}
+.secondary-button.by-keyboard:focus {
+  color: #004990;
+  box-shadow: inset 0 0 0 2px #004990 !important;
+  border: none;
+}
+.secondary-button.disabled,
+.secondary-button:disabled {
+  color: #666666;
+  border: 1px solid #666666;
+}
+
+/* Micro Buttons */
+.micro-buttons{
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: #0467c6;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 1px;
+  vertical-align: middle;
+}
+
+.micro-buttons:hover{
+  text-decoration: underline;
+}
+
+.micro-buttons:focus {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 2px #0467c6;
+  text-decoration: underline;
+  outline: none;  
+}
+
+.micro-buttons.by-keyboard:focus {
+  box-shadow: 0 0 0 0px #fff, 0 0 0 0px #0467c6 !important;
+}
+
+
+
+/* Group Button */
+
+.btn-group button, 
+.btn-group .button {
+  float: left;
+}
+
+.clear{
+  clear: both;
+}
+
+
+@media only screen and (max-width: 40em) {
+  .dialog_label {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 0.4px;
+    color: #111111;
+  }
+  
+
+  button,
+  .button {
+    min-width: 100%;
+    margin-bottom: 16px;
+  }
+
+  button:only-of-type,
+  .button:only-of-type,
+  button:last-child,
+  .button:last-child {
+    margin-bottom: 0px;
+  }
+
+  button + button,
+  .button + .button {
+    margin-left: 0px;
+  }
+
+  .btn-group button, 
+  .btn-group .button {
+    min-width: 84px;
+  }
+
+  .btn-group button, 
+  .btn-group .button {
+    min-width: 100%;
+  }
+}
+
+/* Close Button */
+button.closebtn,
+.button.closebtn
+ {
+  float: right;
+  cursor: pointer;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  background-image: url("../img/icons/close.svg");
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  background-color: transparent;
+  border: 0;
+  padding: 22px !important;
+  background-position: center;
+  cursor:auto
+}
+
+button.closebtn:hover,
+.button.closebtn:hover{
+  cursor: pointer;
+}
+
+/* Links */
+/* Links Class */
+a, a[role="button"] {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: #0467c6;
+  text-decoration: none;
+  position: relative;
+  border-radius: 1px;
+}
+
+a:hover, a[role="button"]:hover{
+  text-decoration: underline;
+}
+a:focus, a[role="button"]:focus {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 2px #0467c6;
+  text-decoration: underline;
+  outline: none;  
+}
+
+a.by-keyboard:focus, a[role="button"].by-keyboard:focus {
+  box-shadow: 0 0 0 0px #fff, 0 0 0 0px #0467c6 !important;
+}
